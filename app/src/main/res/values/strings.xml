@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CountriesGraphQL</string>
+
+    <string name="continents_title">Continents</string>
+    <string name="continents_no_data">No data received</string>
+
+    <string name="general_no_internet">Check your internet connection</string>
+
+    <string name="countries_language">Languages:</string>
+    <string name="countries_phone">Phone:</string>
+</resources>

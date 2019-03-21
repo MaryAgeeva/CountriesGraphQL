@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.views.fragments.ContinentsFragment">
+
+    <View
+        android:id="@+id/continents_title_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_primary_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/continents_title_tv"/>
+
+    <TextView
+        android:id="@+id/continents_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/continents_title_iv"
+        app:layout_constraintBottom_toTopOf="@+id/continents_rv_layout"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:textColor="@color/white"
+        android:padding="@dimen/margin_medium"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/text_size_large"
+        android:text="@string/continents_title"/>
+
+    <ImageView
+        android:id="@+id/continents_title_iv"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:src="@drawable/icon_continents"
+        app:layout_constraintTop_toTopOf="@id/continents_title_tv"
+        app:layout_constraintStart_toEndOf="@id/continents_title_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/continents_title_tv"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/continents_rv_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/continents_title_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/continents_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/continents_no_data_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="continents_no_data_tv, continents_no_data_iv"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/continents_no_data_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/continents_title_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/continents_no_data_iv"
+        android:textSize="@dimen/text_size_medium_large"
+        android:textColor="@color/red"
+        android:text="@string/continents_no_data"
+        android:padding="@dimen/margin_large"
+        android:gravity="center_horizontal"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <ImageView
+        android:id="@+id/continents_no_data_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/continents_no_data_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/icon_globe"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

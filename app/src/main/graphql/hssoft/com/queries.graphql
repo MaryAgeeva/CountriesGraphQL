@@ -1,0 +1,21 @@
+query GetAllContinents {
+  continents {
+    code
+    name
+    countries {
+      code
+      name
+      phone
+      native
+      currency
+      emoji
+      languages {
+        code
+        name
+        native
+        rtl
+      }
+    }
+  }
+}
+
